@@ -3,6 +3,7 @@ package com.example.demo.thread;
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicInteger;
 
 /*
  *  @program: test-demo
@@ -12,6 +13,9 @@ import java.util.concurrent.TimeUnit;
  *  @Date: 2021/3/26 11:28
  */
 public class ThreadPoolExecutorDemo {
+
+    private static AtomicInteger atomicInteger = new AtomicInteger();
+
 
     private static final int CORE_POOL_SIZE = 5;
     private static final int MAX_POOL_SIZE = 10;
@@ -30,6 +34,7 @@ public class ThreadPoolExecutorDemo {
                 new ThreadPoolExecutor.CallerRunsPolicy());
 
         for (int i = 0; i < 10; i++) {
+
             //创建WorkerThread对象（WorkerThread类实现了Runnable 接口）
             Runnable worker = new MyRunnable("" + i);
             //执行Runnable
