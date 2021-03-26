@@ -1,0 +1,7 @@
+test:
+  list: aaa,bbb,ccc
+
+  map1: '{"name": "zhangsan", "sex": "male"}'
+  map2: '{"math": "90", "english": "85"}'
+
+
